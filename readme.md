@@ -9,7 +9,7 @@
   dollars"
 
 # To use:
-  run 'node printNumber.js' from inside lib directory
+  run `node printNumber.js` from inside lib directory
 
 # To run tests:
-  run jasmine from root
+  run `jasmine` from root
