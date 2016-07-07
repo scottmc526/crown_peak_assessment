@@ -7,7 +7,7 @@ describe('intToEnglish', function() {
   })
 })
 describe('intToEnglish', function() {
-  xit('should return the word ten when passed the number 10', function() {
+  it('should return the word ten when passed the number 10', function() {
     var num = 10;
     expect(myFuncs.intToEnglish(num)).toEqual('ten and 00/100')
   })
@@ -15,7 +15,7 @@ describe('intToEnglish', function() {
 
 //test to make sure decimal function for decimal under .10 is correct
 describe('decimal', function() {
-  xit('should return the decimal number over 100', function() {
+  it('should return the decimal number over 100', function() {
     var decimal = '.04';
     expect(myFuncs.decimal(decimal)).toEqual('04/100')
   })
@@ -23,13 +23,13 @@ describe('decimal', function() {
 
 //test to make sure decimal funtion for decimal at or over .10 is correct
 describe('decimal', function() {
-  xit('should return the decimal number over 100', function() {
+  it('should return the decimal number over 100', function() {
     var decimal = '.10';
     expect(myFuncs.decimal(decimal)).toEqual('10/100')
   })
 })
 describe('decimal', function() {
-  xit('should return the decimal number over 100', function() {
+  it('should return the decimal number over 100', function() {
     var decimal = '.11';
     expect(myFuncs.decimal(decimal)).toEqual('11/100')
   })
@@ -37,7 +37,7 @@ describe('decimal', function() {
 
 //test to determine if number at or under 10 with decimal under .10 works correctly
 describe('intToEnglish', function() {
-  xit('should return ten and 04/100 when passed the number 10.04', function() {
+  it('should return ten and 04/100 when passed the number 10.04', function() {
     var num = 10.04;
     expect(myFuncs.intToEnglish(num)).toEqual('ten and 04/100')
   })
@@ -45,7 +45,7 @@ describe('intToEnglish', function() {
 
 //test to determine if number at or under 10 with decimal that has zero at the end;
 describe('intToEnglish', function() {
-  xit('should return ten and 50/100 when passed the number 10.50', function() {
+  it('should return ten and 50/100 when passed the number 10.50', function() {
     var num = 10.50;
     expect(myFuncs.intToEnglish(num)).toEqual('ten and 50/100')
   })
