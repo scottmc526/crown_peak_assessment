@@ -9,4 +9,7 @@
   dollars"
 
 # To use:
-  run node printNumber.js
+  run node printNumber.js in terminal
+
+# To run tests:
+  run jasmine from root
