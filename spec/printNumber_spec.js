@@ -77,3 +77,9 @@ describe('intToEnglish', function() {
     expect(myFuncs.intToEnglish(127.33)).toEqual('one hundred twenty-seven and 33/100')
   })
 })
+//zero in tens position
+describe('intToEnglish', function() {
+  it('should produce a correct result if there is a zero in the tens position', function() {
+    expect(myFuncs.intToEnglish(207.33)).toEqual('two hundred seven and 33/100')
+  })
+})
