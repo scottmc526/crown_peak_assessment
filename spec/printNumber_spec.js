@@ -53,7 +53,12 @@ describe('intToEnglish', function() {
     expect(myFuncs.intToEnglish(10.50)).toEqual('ten and 50/100')
   })
 })
-//test to determine if number over 20 and less than 100
+//n > 19.99 && < 100
+describe('intToEnglish', function() {
+  it('should return twenty when passed the number 20.00', function() {
+    expect(myFuncs.intToEnglish(20.00)).toEqual('twenty and 00/100')
+  })
+})
 describe('intToEnglish', function() {
   it('should return 65 and 33/100 when passed the number 65.33', function() {
     expect(myFuncs.intToEnglish(65.33)).toEqual('sixty-five and 33/100')
