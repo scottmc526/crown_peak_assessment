@@ -35,7 +35,7 @@ describe('decimal', function() {
   })
 })
 
-//test to determine if number at or under 10 with decimal under .10 works correctly
+//test to determine if number under 20 with decimal that doesn't end in 0 is correct
 describe('intToEnglish', function() {
   it('should return ten and 04/100 when passed the number 10.04', function() {
     var num = 10.04;
@@ -43,7 +43,7 @@ describe('intToEnglish', function() {
   })
 })
 
-//test to determine if number at or under 10 with decimal that has zero at the end;
+//test to determine if number under 20 with decimal that ends with 0 is correct
 describe('intToEnglish', function() {
   it('should return ten and 50/100 when passed the number 10.50', function() {
     var num = 10.50;
