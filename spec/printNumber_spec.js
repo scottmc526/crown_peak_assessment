@@ -13,25 +13,25 @@ describe('intToEnglish', function() {
   })
 })
 
-//test to make sure decimal function for decimal under .10 is correct
+//test to determine if decimal function for decimal under .10 is correct
 describe('decimal', function() {
   it('should return the decimal number over 100', function() {
     var decimal = '.04';
-    expect(myFuncs.decimal(decimal)).toEqual('04/100')
+    expect(myFuncs.handleDecimal(decimal)).toEqual('04/100')
   })
 })
 
-//test to make sure decimal funtion for decimal at or over .10 is correct
+//tests determine if decimal funtion for decimal at or over .10 is correct
 describe('decimal', function() {
   it('should return the decimal number over 100', function() {
     var decimal = '.10';
-    expect(myFuncs.decimal(decimal)).toEqual('10/100')
+    expect(myFuncs.handleDecimal(decimal)).toEqual('10/100')
   })
 })
 describe('decimal', function() {
   it('should return the decimal number over 100', function() {
     var decimal = '.11';
-    expect(myFuncs.decimal(decimal)).toEqual('11/100')
+    expect(myFuncs.handleDecimal(decimal)).toEqual('11/100')
   })
 })
 
