@@ -67,7 +67,7 @@ describe('intToEnglish', function() {
 
 // n === 100
 describe('intToEnglish', function() {
-  it('should return 65 and 33/100 when passed the number 65.33', function() {
+  it('should return one hundred and 00/100 when passed the number 100.00', function() {
     expect(myFuncs.intToEnglish(100.00)).toEqual('one hundred and 00/100')
   })
 })
