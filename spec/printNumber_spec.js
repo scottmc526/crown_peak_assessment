@@ -77,12 +77,14 @@ describe('intToEnglish', function() {
     expect(myFuncs.intToEnglish(127.33)).toEqual('one hundred twenty-seven and 33/100')
   })
 })
+
 //zero in tens position
 describe('intToEnglish', function() {
   it('should produce a correct result if there is a zero in the tens position', function() {
     expect(myFuncs.intToEnglish(207.33)).toEqual('two hundred seven and 33/100')
   })
 })
+
 //check if groupNum function produces correct result
 describe('intToEnglish', function() {
   it('should split a six digit number into two groups of three in reverse order', function() {
@@ -105,10 +107,27 @@ describe('intToEnglish', function() {
   })
 })
 
+//check if evalGroups function produces correct result
+describe('evalGroups', function() {
+  it('should take a number split it into groups and return the evaluated groups in reverse order', function() {
+    expect(myFuncs.evalGroups('111111')).toEqual(['one hundred eleven', 'one hundred eleven'])
+  })
+})
+describe('evalGroups', function() {
+  it('should take a number split it into groups and return the evaluated groups in reverse order', function() {
+    expect(myFuncs.evalGroups('1111')).toEqual(['one hundred eleven', 'one'])
+  })
+})
+describe('evalGroups', function() {
+  xit('should take a number split it into groups and return the evaluated groups in reverse order', function() {
+    expect(myFuncs.evalGroups('1000')).toEqual(['one hundred', 'zero'])
+  })
+})
+
 
 // n = 1000
 describe('intToEnglish', function() {
-  xit('should produce a correct result if n = 1000', function() {
+  it('should produce a correct result if n = 1000', function() {
     expect(myFuncs.intToEnglish(1000.00)).toEqual('one thousand and 00/100')
   })
 })
