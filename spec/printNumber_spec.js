@@ -83,3 +83,32 @@ describe('intToEnglish', function() {
     expect(myFuncs.intToEnglish(207.33)).toEqual('two hundred seven and 33/100')
   })
 })
+//check if groupNum function produces correct result
+describe('intToEnglish', function() {
+  it('should split a six digit number into two groups of three in reverse order', function() {
+    expect(myFuncs.groupNum(100000)).toEqual(['000', '100'])
+  })
+})
+describe('intToEnglish', function() {
+  it('should split a four digit number into two groups', function() {
+    expect(myFuncs.groupNum(1000)).toEqual(['000', '1'])
+  })
+})
+describe('intToEnglish', function() {
+  it('should split a seven digit number into three groups', function() {
+    expect(myFuncs.groupNum(1000000)).toEqual(['000', '000', '1'])
+  })
+})
+describe('intToEnglish', function() {
+  it('should split a eight digit number into three groups', function() {
+    expect(myFuncs.groupNum(11000000)).toEqual(['000', '000', '11'])
+  })
+})
+
+
+// n = 1000
+describe('intToEnglish', function() {
+  xit('should produce a correct result if n = 1000', function() {
+    expect(myFuncs.intToEnglish(1000.00)).toEqual('one thousand and 00/100')
+  })
+})
