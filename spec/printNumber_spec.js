@@ -112,3 +112,8 @@ describe('intToEnglish', function() {
     expect(myFuncs.intToEnglish(1000.00)).toEqual('one thousand and 00/100')
   })
 })
+describe('intToEnglish', function() {
+  it('should produce a correct result if n = 1000', function() {
+    expect(myFuncs.intToEnglish(1111.00)).toEqual('one thousand one hundred eleven and 00/100')
+  })
+})
