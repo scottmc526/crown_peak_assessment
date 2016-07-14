@@ -119,20 +119,37 @@ describe('evalGroups', function() {
   })
 })
 describe('evalGroups', function() {
-  xit('should take a number split it into groups and return the evaluated groups in reverse order', function() {
-    expect(myFuncs.evalGroups('1000')).toEqual(['one hundred', 'zero'])
+  it('should take a number split it into groups and return the evaluated groups in reverse order', function() {
+    expect(myFuncs.evalGroups('1000')).toEqual(['', 'one'])
+  })
+})
+describe('evalGroups', function() {
+  it('should take a number split it into groups and return the evaluated groups in reverse order', function() {
+    expect(myFuncs.evalGroups('1001')).toEqual(['one', 'one'])
   })
 })
 
 
 // n = 1000
 describe('intToEnglish', function() {
-  it('should produce a correct result if n = 1000', function() {
+  xit('should produce a correct result if n = 1000', function() {
     expect(myFuncs.intToEnglish(1000.00)).toEqual('one thousand and 00/100')
+  })
+})
+
+// n > 1000
+describe('intToEnglish', function() {
+  it('should produce a correct result if n = 1001', function() {
+    expect(myFuncs.intToEnglish(1001.00)).toEqual('one thousand one and 00/100')
   })
 })
 describe('intToEnglish', function() {
   it('should produce a correct result if n = 1000', function() {
     expect(myFuncs.intToEnglish(1111.00)).toEqual('one thousand one hundred eleven and 00/100')
+  })
+})
+describe('intToEnglish', function() {
+  it('should produce a correct result if n = 1000000', function() {
+    expect(myFuncs.intToEnglish(1000000.00)).toEqual('one million and 00/100')
   })
 })
