@@ -132,7 +132,7 @@ describe('evalGroups', function() {
 
 // n = 1000
 describe('intToEnglish', function() {
-  xit('should produce a correct result if n = 1000', function() {
+  it('should produce a correct result if n = 1000', function() {
     expect(myFuncs.intToEnglish(1000.00)).toEqual('one thousand and 00/100')
   })
 })
