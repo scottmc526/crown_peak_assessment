@@ -129,6 +129,17 @@ describe('evalGroups', function() {
   })
 })
 
+// tests for removeSpaces function
+describe('removeSpaces', function() {
+  it('should remove empty indexes in array', function() {
+    expect(myFuncs.removeSpaces(['one thousand','','ten'])).toEqual(['one thousand', 'ten'])
+  })
+})
+describe('removeSpaces', function() {
+  it('should remove empty indexes in array', function() {
+    expect(myFuncs.removeSpaces(['one million','',''])).toEqual(['one million'])
+  })
+})
 
 // n = 1000
 describe('intToEnglish', function() {
@@ -151,10 +162,5 @@ describe('intToEnglish', function() {
 describe('intToEnglish', function() {
   it('should produce a correct result if n = 1000000', function() {
     expect(myFuncs.intToEnglish(1000000.00)).toEqual('one million and 00/100')
-  })
-})
-describe('removeSpaces', function() {
-  it('should remove empty indexes in array', function() {
-    expect(myFuncs.removeSpaces(['one thousand','','ten'])).toEqual(['one thousand', 'ten'])
   })
 })
