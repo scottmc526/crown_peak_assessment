@@ -1,34 +1,23 @@
 var myFuncs = require('../lib/printNumber');
-// tests for basic numbers and format validation
-describe('intToEnglish', function() {
-  it('should return the word one when passed the number 1', function() {
-    expect(myFuncs.intToEnglish(1)).toEqual('one and 00/100');
+
+//sepNumFromDec tests
+describe('sepNumFromDec', function() {
+  it('separate the whole number and the decmial point and return them in two indexes in array', function() {
+    expect(myFuncs.sepNumFromDec(1.00)).toEqual(['1', '.00']);
   })
 })
-describe('intToEnglish', function() {
-  it('should return the word ten when passed the number 10', function() {
-    expect(myFuncs.intToEnglish(10)).toEqual('ten and 00/100')
-  })
-})
-describe('intToEnglish', function() {
-  it('should return the word fifteen and 40/100 when passed the number 15.4', function() {
-    expect(myFuncs.intToEnglish(15.4)).toEqual('fifteen and 40/100')
-  })
-})
-describe('intToEnglish', function() {
-  it('should round the number 12.447 to 12.45 and return twelve and 45/100', function() {
-    expect(myFuncs.intToEnglish(12.447)).toEqual('twelve and 45/100')
+describe('sepNumFromDec', function() {
+  it('separate the whole number and the decmial point and return them in two indexes in array', function() {
+    expect(myFuncs.sepNumFromDec(1000.00)).toEqual(['1000', '.00']);
   })
 })
 
-//test to determine if decimal function for decimal under .10 is correct
+//decimal tests
 describe('decimal', function() {
   it('should return the decimal number over 100', function() {
     expect(myFuncs.handleDecimal('.04')).toEqual('04/100')
   })
 })
-
-//tests determine if decimal funtion for decimal at or over .10 is correct
 describe('decimal', function() {
   it('should return the decimal number over 100', function() {
     expect(myFuncs.handleDecimal('.10')).toEqual('10/100')
@@ -40,20 +29,63 @@ describe('decimal', function() {
   })
 })
 
-//test to determine if number under 20 with decimal that doesn't end in 0 is correct
+//createNumArr test
+describe('decimal', function() {
+  it('should take a number and split it into an array', function() {
+    expect(myFuncs.createNumArr(101)).toEqual(['1', '0', '1'])
+  })
+})
+
+
+
+//small number tests
+describe('handleSmallSum', function() {
+  it('should return the word one when passed the number 1', function() {
+    expect(myFuncs.handleSmallSum(1)).toEqual('one');
+  })
+})
+describe('handleSmallSum', function() {
+  it('should return the word ten when passed the number 10', function() {
+    expect(myFuncs.handleSmallSum(10)).toEqual('ten')
+  })
+})
+describe('handleSmallSum', function() {
+  it('should return the word ten when passed the number 10', function() {
+    expect(myFuncs.handleSmallSum(50)).toEqual('fifty')
+  })
+})
+describe('handleSmallSum', function() {
+  it('should return the word ten when passed the number 10', function() {
+    expect(myFuncs.handleSmallSum(65)).toEqual('sixty-five')
+  })
+})
+
+// small number with decimal
+describe('intToEnglish', function() {
+  it('should return the word fifteen and 40/100 when passed the number 15.4', function() {
+    expect(myFuncs.intToEnglish(12.25)).toEqual('twelve and 25/100')
+  })
+})
+describe('intToEnglish', function() {
+  it('should round the number 12.447 to 12.45 and return twelve and 45/100', function() {
+    expect(myFuncs.intToEnglish(12.447)).toEqual('twelve and 45/100')
+  })
+})
+describe('intToEnglish', function() {
+  it('should return the word fifteen and 40/100 when passed the number 15.4', function() {
+    expect(myFuncs.intToEnglish(15.4)).toEqual('fifteen and 40/100')
+  })
+})
 describe('intToEnglish', function() {
   it('should return ten and 04/100 when passed the number 10.04', function() {
     expect(myFuncs.intToEnglish(10.04)).toEqual('ten and 04/100')
   })
 })
-
-//test to determine if number under 20 with decimal that ends with 0 is correct
 describe('intToEnglish', function() {
   it('should return ten and 50/100 when passed the number 10.50', function() {
     expect(myFuncs.intToEnglish(10.50)).toEqual('ten and 50/100')
   })
 })
-//n > 19.99 && < 100
 describe('intToEnglish', function() {
   it('should return a the correct string when passed 20.00', function() {
     expect(myFuncs.intToEnglish(20.00)).toEqual('twenty and 00/100')
@@ -65,43 +97,53 @@ describe('intToEnglish', function() {
   })
 })
 
-// n === 100
-describe('intToEnglish', function() {
+//handleHundreds tests
+describe('handleHundreds', function() {
   it('should return one hundred and 00/100 when passed the number 100.00', function() {
-    expect(myFuncs.intToEnglish(100.00)).toEqual('one hundred and 00/100')
+    expect(myFuncs.handleHundreds(100)).toEqual('one hundred')
   })
 })
-//n > 100 && n < 1000
+describe('handleHundreds', function() {
+  it('should produce a correct result if there is a zero in the tens position', function() {
+    expect(myFuncs.handleHundreds(207)).toEqual('two hundred seven')
+  })
+})
+describe('handleHundreds', function() {
+  it('should return one hundred twenty-seven and 33/100 when passed the number 127.33', function() {
+    expect(myFuncs.handleHundreds(456)).toEqual('four hundred fifty-six')
+  })
+})
+
+//Numbers < 1000 with decimal
 describe('intToEnglish', function() {
   it('should return one hundred twenty-seven and 33/100 when passed the number 127.33', function() {
-    expect(myFuncs.intToEnglish(127.33)).toEqual('one hundred twenty-seven and 33/100')
+    expect(myFuncs.intToEnglish(456.00)).toEqual('four hundred fifty-six and 00/100')
+  })
+})
+describe('intToEnglish', function() {
+  it('should return one hundred twenty-seven and 33/100 when passed the number 127.33', function() {
+    expect(myFuncs.intToEnglish(456.50)).toEqual('four hundred fifty-six and 50/100')
   })
 })
 
-//zero in tens position
-describe('intToEnglish', function() {
-  it('should produce a correct result if there is a zero in the tens position', function() {
-    expect(myFuncs.intToEnglish(207.33)).toEqual('two hundred seven and 33/100')
-  })
-})
 
 //check if groupNum function produces correct result
-describe('intToEnglish', function() {
+describe('groupNum', function() {
   it('should split a six digit number into two groups of three in reverse order', function() {
     expect(myFuncs.groupNum(100000)).toEqual(['000', '100'])
   })
 })
-describe('intToEnglish', function() {
+describe('groupNum', function() {
   it('should split a four digit number into two groups', function() {
     expect(myFuncs.groupNum(1000)).toEqual(['000', '1'])
   })
 })
-describe('intToEnglish', function() {
+describe('groupNum', function() {
   it('should split a seven digit number into three groups', function() {
     expect(myFuncs.groupNum(1000000)).toEqual(['000', '000', '1'])
   })
 })
-describe('intToEnglish', function() {
+describe('groupNum', function() {
   it('should split a eight digit number into three groups', function() {
     expect(myFuncs.groupNum(11000000)).toEqual(['000', '000', '11'])
   })
@@ -141,26 +183,32 @@ describe('removeSpaces', function() {
   })
 })
 
-// n = 1000
-describe('intToEnglish', function() {
+//handleLargeSum tests
+describe('handleLargeSum', function() {
   it('should produce a correct result if n = 1000', function() {
-    expect(myFuncs.intToEnglish(1000.00)).toEqual('one thousand and 00/100')
+    expect(myFuncs.handleLargeSum(1000)).toEqual('one thousand')
+  })
+})
+describe('handleLargeSum', function() {
+  it('should produce a correct result if n = 1001', function() {
+    expect(myFuncs.handleLargeSum(1001)).toEqual('one thousand one')
+  })
+})
+describe('handleLargeSum', function() {
+  it('should produce a correct result if n = 1000', function() {
+    expect(myFuncs.handleLargeSum(1111)).toEqual('one thousand one hundred eleven')
+  })
+})
+describe('handleLargeSum', function() {
+  it('should produce a correct result if n = 1000000', function() {
+    expect(myFuncs.handleLargeSum(1000000)).toEqual('one million')
   })
 })
 
-// n > 1000
+
+// bring it all together tests
 describe('intToEnglish', function() {
-  it('should produce a correct result if n = 1001', function() {
-    expect(myFuncs.intToEnglish(1001.00)).toEqual('one thousand one and 00/100')
-  })
-})
-describe('intToEnglish', function() {
-  it('should produce a correct result if n = 1000', function() {
-    expect(myFuncs.intToEnglish(1111.00)).toEqual('one thousand one hundred eleven and 00/100')
-  })
-})
-describe('intToEnglish', function() {
-  it('should produce a correct result if n = 1000000', function() {
-    expect(myFuncs.intToEnglish(1000000.00)).toEqual('one million and 00/100')
+  it('should produce a correct for a large number', function() {
+    expect(myFuncs.intToEnglish(1000001242.65)).toEqual('one billion one thousand two hundred forty-two and 65/100')
   })
 })
