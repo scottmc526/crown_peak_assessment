@@ -153,3 +153,8 @@ describe('intToEnglish', function() {
     expect(myFuncs.intToEnglish(1000000.00)).toEqual('one million and 00/100')
   })
 })
+describe('removeSpaces', function() {
+  it('should remove empty indexes in array', function() {
+    expect(myFuncs.removeSpaces(['one thousand','','ten'])).toEqual(['one thousand', 'ten'])
+  })
+})
